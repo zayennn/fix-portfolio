@@ -1,5 +1,5 @@
 {
-  "name": "my-portfolio",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,11 +11,11 @@
     "emailjs-com": "^3.2.0",
     "framer-motion": "^12.23.26",
     "gsap": "^3.14.2",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.11.0",
+    "react-router-dom": "^6.26.2",
     "react-scripts": "5.0.1",
     "react-simple-typewriter": "^5.0.1",
     "react-typing-effect": "^2.0.5",
