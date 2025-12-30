@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 export const getGitHubData = async () => {
-    const { data } = await axios.get('/api/github/zayennn');
-    return data;
+    const response = await axios.get(
+        'http://localhost:5000/api/github/zayennn'
+    );
+    return response.data;
 };
