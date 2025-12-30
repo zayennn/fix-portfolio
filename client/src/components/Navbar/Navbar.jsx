@@ -213,9 +213,11 @@ const Navbar = () => {
                     )}
                 </AnimatePresence>
 
-                <button className={styles.btn__navbar} data-cursor="hover">
-                    Download CV <i className="fa-solid fa-download"></i>
-                </button>
+                <a href="https://drive.google.com/uc?export=download&id=11wosUfp3EdpWZaOVFNSYJbLB9EYEds2G" >
+                    <button className={styles.btn__navbar} data-cursor="hover">
+                        Download CV <i className="fa-solid fa-download"></i>
+                    </button>
+                </a>
 
                 <label
                     className={`${styles.hamburger} ${isMenuOpen ? styles.hamburger__open : ''}`}
