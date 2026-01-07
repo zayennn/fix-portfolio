@@ -73,7 +73,6 @@ const BehindTheCode = () => {
     const safePopularRepos = Array.isArray(popularRepos) ? popularRepos : [];
     const safeRecentRepos = Array.isArray(recentRepos) ? recentRepos : [];
 
-    // kalau tidak ada fallback ke layanan chart publik berdasarkan username
     const contributionUrl =
         contributionCalendar ||
         `https://ghchart.rshah.org/${user?.login || GITHUB_USERNAME}`;
