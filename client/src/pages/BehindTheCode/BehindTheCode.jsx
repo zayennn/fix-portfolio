@@ -73,7 +73,6 @@ const BehindTheCode = () => {
     const safePopularRepos = Array.isArray(popularRepos) ? popularRepos : [];
     const safeRecentRepos = Array.isArray(recentRepos) ? recentRepos : [];
 
-    // URL grafik kontribusi: pakai data dari backend kalau ada,
     // kalau tidak ada fallback ke layanan chart publik berdasarkan username
     const contributionUrl =
         contributionCalendar ||
