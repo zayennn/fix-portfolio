@@ -77,7 +77,6 @@ const BehindTheCode = () => {
         contributionCalendar ||
         `https://ghchart.rshah.org/${user?.login || GITHUB_USERNAME}`;
 
-    // Jika API tidak mengirim popularRepos, kita fallback ke daftar custom/pinned
     const hasApiPopularRepos = safePopularRepos.length > 0;
     const fallbackFeaturedRepos = CUSTOM_FEATURED_REPOS.map((name) => ({
         name,
