@@ -69,7 +69,6 @@ const BehindTheCode = () => {
         contributionCalendar 
     } = githubData || {};
 
-    // Ensure arrays are actually arrays
     const safeLanguages = Array.isArray(languages) ? languages : [];
     const safePopularRepos = Array.isArray(popularRepos) ? popularRepos : [];
     const safeRecentRepos = Array.isArray(recentRepos) ? recentRepos : [];
