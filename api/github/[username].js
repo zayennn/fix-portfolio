@@ -15,6 +15,8 @@ const github = axios.create({
 export default async function handler(req, res) {
     const { username } = req.query;
 
+    console.log("API HIT:", username);
+
     try {
         const { data: user } = await github.get(`/users/${username}`);
 
