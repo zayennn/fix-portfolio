@@ -101,7 +101,7 @@ const Projects = () => {
             description: "The React Web Python Learning project is an interactive website using React.js for learning Python basics in a practical and fun way. It's perfect for beginners to quickly learn without any hassle.",
             category: 'personal',
             type: 'Web Development',
-            technologies: ['PHP', 'Laravel'],
+            technologies: ['React Js'],
             image: '/images/projects/python learning.png',
             github: 'https://github.com/zayennn/budget-tracker',
             github: 'https://github.com/zayennn/react-web-python-learning',
