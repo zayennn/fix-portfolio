@@ -22,8 +22,10 @@ const Hero = () => {
 
     // Initialize Tilt.js on code snippet
     useEffect(() => {
-        if (codeSnippetRef.current) {
-            Tilt.init(codeSnippetRef.current, {
+        const currentRef = codeSnippetRef.current;
+
+        if (currentRef) {
+            Tilt.init(currentRef, {
                 max: 15,
                 speed: 400,
                 glare: true,
@@ -39,10 +41,9 @@ const Hero = () => {
             });
         }
 
-        // Cleanup
         return () => {
-            if (codeSnippetRef.current && codeSnippetRef.current.vanillaTilt) {
-                codeSnippetRef.current.vanillaTilt.destroy();
+            if (currentRef && currentRef.vanillaTilt) {
+                currentRef.vanillaTilt.destroy();
             }
         };
     }, []);
@@ -56,7 +57,7 @@ const Hero = () => {
 
     // Render code lines secara manual tanpa dangerouslySetInnerHTML
     const renderCodeLine = (line) => {
-        switch(line.number) {
+        switch (line.number) {
             case 1:
                 return (
                     <code>
@@ -128,7 +129,9 @@ const Hero = () => {
             case 13:
                 return (
                     <code>
-                        <span className={styles.comment}>// Ready to collaborate?</span>
+                        <span className={styles.comment}>
+                            {'// Ready to collaborate?'}
+                        </span>
                     </code>
                 );
             case 14:
@@ -148,7 +151,7 @@ const Hero = () => {
         <section className={styles.section__hero}>
             <div className={styles.hero__container}>
                 {/* Content */}
-                <motion.div 
+                <motion.div
                     className={styles.hero__content}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -158,7 +161,7 @@ const Hero = () => {
                         <span className={styles.badge__text}>Available for work</span>
                     </div>
 
-                    <motion.h2 
+                    <motion.h2
                         className={styles.greeting}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -167,7 +170,7 @@ const Hero = () => {
                         Hello, I'm
                     </motion.h2>
 
-                    <motion.h1 
+                    <motion.h1
                         className={styles.name}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -177,7 +180,7 @@ const Hero = () => {
                         Elang Atha Zahran
                     </motion.h1>
 
-                    <motion.div 
+                    <motion.div
                         className={styles.title__wrapper}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -197,18 +200,18 @@ const Hero = () => {
                         <div className={styles.title__underline}></div>
                     </motion.div>
 
-                    <motion.p 
+                    <motion.p
                         className={styles.description}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.8 }}
                         data-cursor="hover"
                     >
-                        Building exceptional digital experiences with modern web technologies. 
+                        Building exceptional digital experiences with modern web technologies.
                         Specializing in responsive design, clean architecture, and scalable solutions.
                     </motion.p>
 
-                    <motion.div 
+                    <motion.div
                         className={styles.cta__container}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -223,7 +226,7 @@ const Hero = () => {
                         </a>
                     </motion.div>
 
-                    <motion.div 
+                    <motion.div
                         className={styles.social__links}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -244,7 +247,7 @@ const Hero = () => {
                         ))}
                     </motion.div>
 
-                    <motion.div 
+                    <motion.div
                         className={styles.scroll__indicator}
                         animate={{ y: [0, 10, 0] }}
                         transition={{ repeat: Infinity, duration: 2 }}
@@ -255,7 +258,7 @@ const Hero = () => {
                 </motion.div>
 
                 {/* 3D Code Snippet */}
-                <motion.div 
+                <motion.div
                     className={styles.hero__visual}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -264,8 +267,8 @@ const Hero = () => {
                         transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`
                     }}
                 >
-                    <div 
-                        ref={codeSnippetRef} 
+                    <div
+                        ref={codeSnippetRef}
                         className={styles.code__snippet__wrapper}
                         data-tilt
                         data-tilt-max="15"
@@ -279,13 +282,13 @@ const Hero = () => {
                             {/* Code Header */}
                             <div className={styles.code__header}>
                                 <div className={styles.code__dots}>
-                                    <span className={styles.dot} style={{backgroundColor: '#FF5F56'}}></span>
-                                    <span className={styles.dot} style={{backgroundColor: '#FFBD2E'}}></span>
-                                    <span className={styles.dot} style={{backgroundColor: '#27C93F'}}></span>
+                                    <span className={styles.dot} style={{ backgroundColor: '#FF5F56' }}></span>
+                                    <span className={styles.dot} style={{ backgroundColor: '#FFBD2E' }}></span>
+                                    <span className={styles.dot} style={{ backgroundColor: '#27C93F' }}></span>
                                 </div>
                                 <span className={styles.code__filename}>portfolio.js</span>
                             </div>
-                            
+
                             {/* Code Content with proper syntax highlighting */}
                             <div className={styles.code__content}>
                                 <pre className={styles.code__pre}>
@@ -314,7 +317,7 @@ const Hero = () => {
             </div>
 
             {/* Tech Stack */}
-            <motion.div 
+            <motion.div
                 className={styles.tech__stack}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -323,7 +326,7 @@ const Hero = () => {
                 <div className={styles.tech__label}>Tech Stack This Portfolio</div>
                 <div className={styles.tech__items}>
                     {['React', 'JavaScript', 'CSS3', 'Framer Motion', 'Tilt.js'].map((tech, index) => (
-                        <motion.span 
+                        <motion.span
                             key={index}
                             className={styles.tech__item}
                             whileHover={{ scale: 1.1 }}
